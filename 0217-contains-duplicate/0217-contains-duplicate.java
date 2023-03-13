@@ -5,8 +5,9 @@ class Solution {
     
         for(int n : nums){
          
-            if(set.contains(n)) return true;
-            set.add(n);
+       //     if(set.contains(n)) return true;
+//set.add(n);
+            if( !set.add(n)) return true;
         }
      
         return false;
