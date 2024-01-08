@@ -6,17 +6,20 @@ class Solution {
         for(int i = 0; i < s.length(); i++){
             char charS = s.charAt(i);
             char charT = t.charAt(i);
-            if(map.containsKey(charS)){
-                if(map.get(charS) != charT) return false;
+            if(!map.containsKey(charS)){
+                if(!map.containsValue(charT))
+                     map.put(charS,charT);
+                else
+                    return false;
             }
             else{
-                if(map.containsValue(charT)) return false;
+                
+                if(map.get(charS) != charT) return false;
             }
-            map.put(charS,charT);
+           
         }
-        
-        return true;
-        
+        return true;  
     }
 }
  
+    
